@@ -1,4 +1,3 @@
-// src/utils/proxy.js
 import axios from 'axios';
 
 const proxyRequest = async ({ method, url, data, headers }) => {
