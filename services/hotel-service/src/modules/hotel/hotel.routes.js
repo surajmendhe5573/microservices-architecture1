@@ -8,5 +8,6 @@ const hotelController = new HotelController();
 
 router.get('/', hotelController.getAll);
 router.post('/', hotelController.create);
+router.get('/:id', hotelController.getById);
 
 export default router;
