@@ -38,4 +38,17 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.get('/:id', async (req, res, next) => {
+  try {
+    const data = await proxyRequest({
+      method: 'GET',
+      url: `${SERVICES.HOTEL_SERVICE}/api/v1/hotel/${req.params.id}`,
+    });
+
+    res.success('Hotel fetched via Gateway', data);
+  } catch (err) {
+    next(err);
+  }
+});
+
 export default router;
