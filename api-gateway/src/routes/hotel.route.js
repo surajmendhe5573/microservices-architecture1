@@ -1,13 +1,9 @@
-// src/routes/hotel.routes.js
 import { Router } from 'express';
 import proxyRequest from '../utils/proxy.js';
 import { SERVICES } from '../config/services.js';
 
 const router = Router();
 
-/**
- * GET /api/v1/hotel
- */
 router.get('/', async (req, res, next) => {
   try {
     const data = await proxyRequest({
@@ -21,9 +17,6 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-/**
- * POST /api/v1/hotel
- */
 router.post('/', async (req, res, next) => {
   try {
     const data = await proxyRequest({
