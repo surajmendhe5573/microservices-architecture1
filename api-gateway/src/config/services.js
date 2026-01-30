@@ -1,4 +1,4 @@
 export const SERVICES = {
-  HOTEL_SERVICE: process.env.HOTEL_SERVICE_URL,
-  STUDENT_SERVICE: process.env.STUDENT_SERVICE_URL,
+  hotel: process.env.HOTEL_SERVICE_URL,
+  student: process.env.STUDENT_SERVICE_URL,
 };
