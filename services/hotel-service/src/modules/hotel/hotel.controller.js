@@ -37,4 +37,27 @@ export default class HotelController {
       next(err);
     }
   };
+
+  update = async(req, res, next)=>{
+      try {
+        const hotel= await this.hotelService.update(req.params.id, req.body);
+        if(!hotel) return res.fail("Hotel not found", statusCode.NOT_FOUND);
+        
+        res.success("Hotel updated successfully", hotel, statusCode.OK);
+      } catch (err) {
+        next(err);
+      }
+    };
+  
+  delete =  async(req, res, next)=>{
+      try {
+        const hotel= await this.hotelService.delete(req.params.id);
+        if(!hotel) return res.fail("Hotel not found");
+  
+        res.success("Hotel deleted successfully",hotel, statusCode.OK);
+        
+      } catch (err) {
+        next(err);
+      }
+    };
 }
